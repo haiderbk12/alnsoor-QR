@@ -1,127 +1,110 @@
 <!DOCTYPE html>
 <html lang="ar" dir="rtl">
 <head>
-    <meta charset="UTF-8">
-    <title>تسجيل معلومات الطالب</title>
-    <style>
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
-        body {
-            font-family: Arial, sans-serif;
-            background-color: #f2f2f2;
-            width: 100%;
-            min-height: 100vh;
-        }
-        header {
-            text-align: center;
-            padding: 20px;
-            background-color: #4CAF50;
-            color: white;
-            font-size: 2.5vw;
-        }
-        form {
-            width: 100%;
-            padding: 20px;
-        }
-        .container {
-            width: 100%;
-            padding: 10px 5%;
-        }
-        .school-name {
-            text-align: center;
-            font-size: 2.5vw;
-            font-weight: bold;
-            margin-bottom: 20px;
-        }
-        img.logo {
-            display: block;
-            margin: 0 auto 20px;
-            max-width: 150px;
-            width: 50%;
-            height: auto;
-        }
-        input, button {
-            width: 100%;
-            padding: 18px;
-            margin: 12px 0;
-            border-radius: 8px;
-            border: 1px solid #ccc;
-            font-size: 2.5vw;
-        }
-        button {
-            background-color: #4CAF50;
-            color: white;
-            border: none;
-            cursor: pointer;
-            font-weight: bold;
-        }
-        button:hover {
-            background-color: #45a049;
-        }
-        .card {
-            background-color: #eee;
-            padding: 18px;
-            border-radius: 8px;
-            text-align: center;
-            font-weight: bold;
-            font-size: 2.5vw;
-            margin-bottom: 20px;
-        }
-        .payment-icons {
-            text-align: center;
-            margin: 25px 0;
-        }
-        .payment-icons img {
-            max-width: 300px;
-            width: 80%;
-            height: auto;
-        }
-
-        /* تكبير الخطوط على الشاشات الكبيرة */
-        @media (min-width: 768px) {
-            header {
-                font-size: 2rem;
-            }
-            .school-name {
-                font-size: 2rem;
-            }
-            input, button, .card {
-                font-size: 1.3rem;
-            }
-        }
-    </style>
+  <meta charset="UTF-8" />
+  <title>تسجيل معلومات الطالب</title>
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body {
+      font-family: Arial, sans-serif;
+      background: #f2f2f2;
+      width: 100%;
+      min-height: 100vh;
+    }
+    header {
+      text-align: center;
+      padding: 20px;
+      background: #4CAF50;
+      color: #fff;
+      font-size: 2.5vw;
+    }
+    form {
+      width: 100%;
+      padding: 20px;
+    }
+    .container {
+      width: 100%;
+      padding: 10px 5%;
+    }
+    input, button {
+      width: 100%;
+      padding: 18px;
+      margin: 12px 0;
+      border-radius: 8px;
+      border: 1px solid #ccc;
+      font-size: 2.5vw;
+    }
+    button {
+      background: #4CAF50;
+      color: white;
+      border: none;
+      cursor: pointer;
+      font-weight: bold;
+    }
+    button:hover {
+      background: #45a049;
+    }
+    .card {
+      background: #eee;
+      padding: 18px;
+      border-radius: 8px;
+      text-align: center;
+      font-weight: bold;
+      font-size: 2.5vw;
+      margin-bottom: 20px;
+    }
+    .payment-icons {
+      text-align: center;
+      margin: 25px 0;
+    }
+    .payment-icons img {
+      max-width: 300px;
+      width: 80%;
+      height: auto;
+    }
+    @media (min-width: 768px) {
+      header {
+        font-size: 2rem;
+      }
+      input, button, .card {
+        font-size: 1.3rem;
+      }
+    }
+  </style>
 </head>
 <body>
 
-<header>
-    مجموعة النسور التعليمية / بابل
-</header>
+<header>مجموعة النسور التعليمية / بابل</header>
 
-<form action="save.php" method="POST">
-    <div class="container">
-        <img src="شعار المدرسة.png" alt="شعار المدرسة" class="logo">
+<form action="https://docs.google.com/forms/d/e/1FAIpQLSdLDZH5qiRkdsp0edl8UvLr1NSs7DcYXnv2YHrVfR9ADNyn8A/formResponse" method="POST" target="hidden_iframe" onsubmit="submitted=true;">
+  <div class="container">
+    <img src="شعار المدرسة.png" alt="شعار المدرسة" class="logo" style="display:block; margin:0 auto 20px; max-width:150px; width:50%; height:auto;">
 
-        <div class="card">
-            رقم بطاقة الكي كارد الخاصة بنا للتحويل:<br>
-            <span>6104337777000000</span>
-        </div>
-
-        <input type="text" name="school_name" placeholder="اسم المدرسة" required>
-        <input type="text" name="student_name" placeholder="اسم الطالب" required>
-        <input type="text" name="phone_number" placeholder="رقم الهاتف" required>
-        <input type="text" name="card_number" placeholder="رقم بطاقة الكي كارد الخاصة بكم" required>
-        <input type="number" name="amount" placeholder="مبلغ القسط المحوّل" required>
-
-        <button type="submit">إرسال</button>
+    <div class="card">
+      رقم بطاقة الكي كارد الخاصة بنا للتحويل:<br>
+      <span>6104337777000000</span>
     </div>
+
+    <input type="text" name="entry.1533107180" placeholder="اسم المدرسة" required />
+    <input type="text" name="entry.1021749293" placeholder="اسم الطالب" required />
+    <input type="text" name="entry.1465918598" placeholder="رقم الهاتف" required />
+    <input type="text" name="entry.1083227215" placeholder="رقم بطاقة الكي كارد الخاصة بكم" required />
+    <input type="number" name="entry.1843713508" placeholder="مبلغ القسط المحوّل" required />
+
+    <button type="submit">إرسال</button>
+  </div>
 </form>
 
 <div class="payment-icons">
-    <img src="53.jpeg" alt="أيقونات الدفع">
+  <img src="53.jpeg" alt="أيقونات الدفع" />
 </div>
+
+<!-- iframe خفي لتجنب إعادة تحميل الصفحة -->
+<iframe name="hidden_iframe" id="hidden_iframe" style="display:none;" onload="if(submitted) { alert('✅ تم إرسال البيانات بنجاح'); window.location='index.html'; }"></iframe>
+
+<script>
+  var submitted = false;
+</script>
 
 </body>
 </html>
