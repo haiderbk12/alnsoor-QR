@@ -40,6 +40,7 @@
       border: none;
       cursor: pointer;
       font-weight: bold;
+      transition: background 0.3s ease;
     }
     button:hover {
       background: #45a049;
@@ -70,13 +71,24 @@
         font-size: 1.3rem;
       }
     }
+    #success-message {
+      display: none;
+      text-align: center;
+      padding: 15px;
+      margin-top: 15px;
+      color: #155724;
+      background-color: #d4edda;
+      border: 1px solid #c3e6cb;
+      border-radius: 8px;
+      font-size: 1.2rem;
+    }
   </style>
 </head>
 <body>
 
 <header>مجموعة النسور التعليمية / بابل</header>
 
-<form action="https://docs.google.com/forms/d/e/1FAIpQLSdLDZH5qiRkdsp0edl8UvLr1NSs7DcYXnv2YHrVfR9ADNyn8A/formResponse" method="POST" target="hidden_iframe" onsubmit="submitted=true;">
+<form id="paymentForm" action="https://docs.google.com/forms/d/e/1FAIpQLSdLDZH5qiRkdsp0edl8UvLr1NSs7DcYXnv2YHrVfR9ADNyn8A/formResponse" method="POST" target="hidden_iframe" onsubmit="submitted=true;">
   <div class="container">
     <img src="شعار المدرسة.png" alt="شعار المدرسة" class="logo" style="display:block; margin:0 auto 20px; max-width:150px; width:50%; height:auto;">
 
@@ -89,21 +101,30 @@
     <input type="text" name="entry.1021749293" placeholder="اسم الطالب" required />
     <input type="text" name="entry.1465918598" placeholder="رقم الهاتف" required />
     <input type="text" name="entry.1083227215" placeholder="رقم بطاقة الكي كارد الخاصة بكم" required />
-    <input type="number" name="entry.1843713508" placeholder="مبلغ القسط المحوّل" required />
+    <input type="text" name="entry.1843713508" placeholder="مبلغ القسط المحوّل" required />
 
     <button type="submit">إرسال</button>
   </div>
 </form>
+
+<div id="success-message">✅ تم إرسال البيانات بنجاح. شكراً لك!</div>
 
 <div class="payment-icons">
   <img src="53.jpeg" alt="أيقونات الدفع" />
 </div>
 
 <!-- iframe خفي لتجنب إعادة تحميل الصفحة -->
-<iframe name="hidden_iframe" id="hidden_iframe" style="display:none;" onload="if(submitted) { alert('✅ تم إرسال البيانات بنجاح'); window.location='index.html'; }"></iframe>
+<iframe name="hidden_iframe" id="hidden_iframe" style="display:none;" onload="if(submitted) { showSuccessMessage(); }"></iframe>
 
 <script>
   var submitted = false;
+  function showSuccessMessage() {
+    if(submitted) {
+      document.getElementById('paymentForm').reset();
+      document.getElementById('success-message').style.display = 'block';
+      submitted = false;
+    }
+  }
 </script>
 
 </body>
