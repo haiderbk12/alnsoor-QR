@@ -4,45 +4,47 @@
     <meta charset="UTF-8" />
     <title>تسجيل معلومات الطالب</title>
     <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
         body {
             font-family: Arial, sans-serif;
             background-color: #f2f2f2;
             display: flex;
-            flex-direction: column;
             justify-content: center;
-            align-items: center;
+            align-items: flex-start;
             min-height: 100vh;
-            margin: 0;
-            padding: 10px;
+            padding: 20px;
         }
         form {
             background-color: white;
-            padding: 25px;
+            padding: 30px;
             border-radius: 15px;
             box-shadow: 0 0 15px rgba(0,0,0,0.15);
-            width: 90%;
-            max-width: 450px;
+            width: 100%;
+            max-width: 100%;
             text-align: center;
         }
         .school-name {
-            font-size: clamp(1.5rem, 5vw, 2rem);
+            font-size: 2.5vw;
             font-weight: bold;
             margin-bottom: 15px;
             color: #333;
         }
         img.logo {
-            max-width: 150px;
+            max-width: 180px;
             height: auto;
             margin-bottom: 20px;
         }
         input, button {
             width: 100%;
-            padding: 15px;
-            margin: 12px 0;
+            padding: 20px;
+            margin: 15px 0;
             border-radius: 8px;
             border: 1px solid #ccc;
-            box-sizing: border-box;
-            font-size: clamp(1rem, 4vw, 1.2rem);
+            font-size: 2.5vw;
         }
         button {
             background-color: #4CAF50;
@@ -56,12 +58,12 @@
         }
         .card {
             background-color: #eee;
-            padding: 15px;
+            padding: 20px;
             margin-bottom: 20px;
             border-radius: 8px;
             text-align: center;
             font-weight: bold;
-            font-size: clamp(1rem, 4vw, 1.3rem);
+            font-size: 2.5vw;
             color: #444;
         }
         .payment-icons {
@@ -69,9 +71,27 @@
             text-align: center;
         }
         .payment-icons img {
-            max-width: 220px;
+            max-width: 300px;
             width: 100%;
             height: auto;
+        }
+
+        @media (min-width: 768px) {
+            .school-name, input, button, .card {
+                font-size: 1.3rem;
+            }
+            form {
+                width: 80%;
+            }
+        }
+
+        @media (min-width: 1200px) {
+            .school-name, input, button, .card {
+                font-size: 1.5rem;
+            }
+            form {
+                width: 60%;
+            }
         }
     </style>
 </head>
@@ -82,7 +102,7 @@
     <div class="school-name">مجموعة النسور التعليمية / بابل</div>
     <img src="شعار المدرسة.png" alt="شعار المدرسة" class="logo" />
 
-    <h3 style="font-size: clamp(1.2rem, 4vw, 1.5rem);">إدخال معلومات الطالب</h3>
+    <h3 style="font-size: 2.5vw; margin-bottom: 15px;">إدخال معلومات الطالب</h3>
 
     <div class="card">
         رقم بطاقة الكي كارد الخاصة بنا للتحويل:<br>
