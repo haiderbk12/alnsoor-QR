@@ -1,127 +1,103 @@
 <!DOCTYPE html>
 <html lang="ar" dir="rtl">
 <head>
-    <meta charset="UTF-8" />
-    <title>تسجيل معلومات الطالب</title>
-    <style>
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
-        body {
-            font-family: Arial, sans-serif;
-            background-color: #f2f2f2;
-            display: flex;
-            justify-content: center;
-            align-items: flex-start;
-            min-height: 100vh;
-            padding: 20px;
-        }
-        form {
-            background-color: white;
-            padding: 30px;
-            border-radius: 15px;
-            box-shadow: 0 0 15px rgba(0,0,0,0.15);
-            width: 100%;
-            max-width: 100%;
-            text-align: center;
-        }
-        .school-name {
-            font-size: 2.5vw;
-            font-weight: bold;
-            margin-bottom: 15px;
-            color: #333;
-        }
-        img.logo {
-            max-width: 180px;
-            height: auto;
-            margin-bottom: 20px;
-        }
-        input, button {
-            width: 100%;
-            padding: 20px;
-            margin: 15px 0;
-            border-radius: 8px;
-            border: 1px solid #ccc;
-            font-size: 2.5vw;
-        }
-        button {
-            background-color: #4CAF50;
-            color: white;
-            border: none;
-            cursor: pointer;
-            transition: background-color 0.3s ease;
-        }
-        button:hover {
-            background-color: #45a049;
-        }
-        .card {
-            background-color: #eee;
-            padding: 20px;
-            margin-bottom: 20px;
-            border-radius: 8px;
-            text-align: center;
-            font-weight: bold;
-            font-size: 2.5vw;
-            color: #444;
-        }
-        .payment-icons {
-            margin-top: 25px;
-            text-align: center;
-        }
-        .payment-icons img {
-            max-width: 300px;
-            width: 100%;
-            height: auto;
-        }
+  <meta charset="UTF-8" />
+  <title>تسجيل معلومات الطالب</title>
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
 
-        @media (min-width: 768px) {
-            .school-name, input, button, .card {
-                font-size: 1.3rem;
-            }
-            form {
-                width: 80%;
-            }
-        }
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #f2f2f2;
+      padding: 20px;
+      display: flex;
+      justify-content: center;
+    }
 
-        @media (min-width: 1200px) {
-            .school-name, input, button, .card {
-                font-size: 1.5rem;
-            }
-            form {
-                width: 60%;
-            }
-        }
-    </style>
+    form {
+      background-color: #fff;
+      width: 100%;
+      max-width: 480px;
+      padding: 30px;
+      border-radius: 12px;
+      box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+    }
+
+    .school-name {
+      font-size: clamp(1.6rem, 6vw, 2.2rem);
+      font-weight: bold;
+      text-align: center;
+      margin-bottom: 16px;
+      color: #333;
+    }
+
+    img.logo {
+      display: block;
+      margin: 0 auto 20px;
+      max-width: 160px;
+      width: 40%;
+      height: auto;
+    }
+
+    .card {
+      font-size: clamp(1rem, 4vw, 1.4rem);
+      background-color: #eee;
+      padding: 16px;
+      border-radius: 8px;
+      text-align: center;
+      margin-bottom: 22px;
+      color: #444;
+    }
+
+    input, button {
+      width: 100%;
+      padding: 16px;
+      margin: 12px 0;
+      font-size: clamp(1rem, 4vw, 1.2rem);
+      border: 1px solid #ccc;
+      border-radius: 6px;
+    }
+
+    button {
+      background-color: #4CAF50;
+      color: white;
+      font-weight: bold;
+      cursor: pointer;
+      transition: background-color 0.3s;
+    }
+    button:hover {
+      background-color: #45a049;
+    }
+
+    .payment-icons {
+      text-align: center;
+      margin-top: 24px;
+    }
+    .payment-icons img {
+      max-width: 260px;
+      width: 60%;
+      height: auto;
+    }
+  </style>
 </head>
 <body>
-
-<form action="save.php" method="POST">
-
+  <form action="save.php" method="POST">
     <div class="school-name">مجموعة النسور التعليمية / بابل</div>
-    <img src="شعار المدرسة.png" alt="شعار المدرسة" class="logo" />
-
-    <h3 style="font-size: 2.5vw; margin-bottom: 15px;">إدخال معلومات الطالب</h3>
-
+    <img src="شعار المدرسة.png" class="logo" alt="شعار المدرسة">
     <div class="card">
-        رقم بطاقة الكي كارد الخاصة بنا للتحويل:<br>
-        <span>6104337777000000</span>
+      رقم بطاقة الكي كارد الخاصة بنا للتحويل:<br>
+      <span>6104337777000000</span>
     </div>
-
-    <input type="text" name="school_name" placeholder="اسم المدرسة" required />
-    <input type="text" name="student_name" placeholder="اسم الطالب" required />
-    <input type="text" name="phone_number" placeholder="رقم الهاتف" required />
-    <input type="text" name="card_number" placeholder="رقم بطاقة الكي كارد الخاصة بكم" required />
-    <input type="number" name="amount" placeholder="مبلغ القسط المحوّل" required />
-    
+    <input type="text" name="school_name" placeholder="اسم المدرسة" required>
+    <input type="text" name="student_name" placeholder="اسم الطالب" required>
+    <input type="text" name="phone_number" placeholder="رقم الهاتف" required>
+    <input type="text" name="card_number" placeholder="رقم بطاقة الكي كارد الخاصة بكم" required>
+    <input type="number" name="amount" placeholder="مبلغ القسط المحوّل" required>
     <button type="submit">إرسال</button>
-</form>
+  </form>
 
-<!-- أيقونات الدفع -->
-<div class="payment-icons">
-    <img src="53.jpeg" alt="أيقونات الدفع" />
-</div>
-
+  <div class="payment-icons">
+    <img src="53.jpeg" alt="أيقونات الدفع">
+  </div>
 </body>
 </html>
