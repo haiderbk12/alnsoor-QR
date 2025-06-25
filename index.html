@@ -25,6 +25,8 @@
     .container {
       width: 100%;
       padding: 10px 5%;
+      max-width: 600px;
+      margin: 0 auto;
     }
     input, button {
       width: 100%;
@@ -54,23 +56,6 @@
       font-size: 2.5vw;
       margin-bottom: 20px;
     }
-    .payment-icons {
-      text-align: center;
-      margin: 25px 0;
-    }
-    .payment-icons img {
-      max-width: 300px;
-      width: 80%;
-      height: auto;
-    }
-    @media (min-width: 768px) {
-      header {
-        font-size: 2rem;
-      }
-      input, button, .card {
-        font-size: 1.3rem;
-      }
-    }
     #success-message {
       display: none;
       text-align: center;
@@ -81,6 +66,17 @@
       border: 1px solid #c3e6cb;
       border-radius: 8px;
       font-size: 1.2rem;
+      max-width: 600px;
+      margin-left: auto;
+      margin-right: auto;
+    }
+    @media (min-width: 768px) {
+      header {
+        font-size: 2rem;
+      }
+      input, button, .card {
+        font-size: 1.3rem;
+      }
     }
   </style>
 </head>
@@ -90,7 +86,6 @@
 
 <form id="paymentForm" action="https://docs.google.com/forms/d/e/1FAIpQLSdLDZH5qiRkdsp0edl8UvLr1NSs7DcYXnv2YHrVfR9ADNyn8A/formResponse" method="POST" target="hidden_iframe" onsubmit="submitted=true;">
   <div class="container">
-    <img src="شعار المدرسة.png" alt="شعار المدرسة" class="logo" style="display:block; margin:0 auto 20px; max-width:150px; width:50%; height:auto;">
 
     <div class="card">
       رقم بطاقة الكي كارد الخاصة بنا للتحويل:<br>
@@ -108,10 +103,6 @@
 </form>
 
 <div id="success-message">✅ تم إرسال البيانات بنجاح. شكراً لك!</div>
-
-<div class="payment-icons">
-  <img src="53.jpeg" alt="أيقونات الدفع" />
-</div>
 
 <!-- iframe خفي لتجنب إعادة تحميل الصفحة -->
 <iframe name="hidden_iframe" id="hidden_iframe" style="display:none;" onload="if(submitted) { showSuccessMessage(); }"></iframe>
